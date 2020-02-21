@@ -30,5 +30,5 @@ set mat=2
 
 syntax enable
 
-execute pathogen#infect()
-execute pathogen#helptags()
+"execute pathogen#infect()
+"execute pathogen#helptags()
