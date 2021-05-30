@@ -32,6 +32,33 @@ alias ocvcpp='g++ `pkg-config opencv --cflags --libs`'
 #opencv C compile command
 alias ocvc='gcc `pkg-config opencv --cflags --libs`'
 
+###### Xubuntu 20.04 ######
+alias clr='clear'
+alias moc='mocp -T /usr/share/moc/themes/yellow_red_theme'
+alias tt='du -hsx * | sort -rh | head -20'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias back='cd -'
+alias lastmod="find . -type f -exec stat --format '%Y :%y %n' \"{}\" \; | sort -nr | cut -d: -f2-"
+alias running_services='systemctl list-units  --type=service  --state=running'
+
+# For fun
+alias llcat='ls -l | lolcat -a'
+
+
+## transfer.sh ##
+transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
+
+
+## sprunge.us ##
+#sprung() { curl -F "sprunge=<-" http://sprunge.us <"$1" ;}
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+
+###### End ######
+
+
 #PS1='[\u@\h \W]\$ '
 #PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$'
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\$\[\033[00m\]'
