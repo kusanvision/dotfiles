@@ -56,6 +56,19 @@ tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | s
 #sprung() { curl -F "sprunge=<-" http://sprunge.us <"$1" ;}
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 
+#FZF config
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='**'
+bind '"\C-g":"cd_with_fzf\n"'
+
+cd_with_fzf()
+{
+    cd $HOME && cd "$(fdfind -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview")" &&
+        echo "$PWD" && tree -L 1
+}
+
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
 ###### End ######
 
 
