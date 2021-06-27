@@ -81,3 +81,5 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export GDK_USE_XFT=1
 export GNUTERM=wxt
+
+#testing
