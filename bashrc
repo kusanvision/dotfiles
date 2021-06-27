@@ -71,7 +71,6 @@ source /usr/share/doc/fzf/examples/key-bindings.bash
 
 ###### End ######
 
-
 #PS1='[\u@\h \W]\$ '
 #PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$'
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\$\[\033[00m\]'
