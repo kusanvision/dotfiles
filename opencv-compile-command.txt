@@ -1,0 +1,4 @@
+#command to compile opencv programs
+
+
+g++ PCATEST.cpp -o PCATEST `pkg-config -libs -cflags opencv`
