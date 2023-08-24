@@ -1,0 +1,3 @@
+#command to compile c++ code that uses armadillo package
+
+g++ tictoc.cpp -o tictoc `pkg-config -libs -cflags armadillo` -O2
